@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    src: url('../fonts/RobotoCondensed-Thin');
+}
+
+@font-face {
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/RobotoCondensed-ExtraLight.ttf');
+}
+
+@font-face {
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/RobotoCondensed-Light.ttf');
+}
+
+@font-face {
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/RobotoCondensed-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/RobotoCondensed-Medium.ttf');
+}
+
+@font-face {
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/RobotoCondensed-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: "Roboto Condensed", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/RobotoCondensed-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Anton-Regular.ttf');
+}

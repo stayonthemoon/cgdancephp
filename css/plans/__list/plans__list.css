@@ -1,0 +1,133 @@
+.plans__list,
+.plans__prices,
+.plans__conditions {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.plans__list {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    text-align: center;
+    max-width: 70vw;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.plans__list-item {
+    width: 250px;
+}
+
+.plans__list-item_colour {
+    margin: 0;
+    padding: 0;
+    display: block;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.single {
+    background-color: #1EA7E8;
+}
+
+.couple {
+    background-color: #E71D36;
+}
+
+.single-combo {
+    background-color: #2EC4B6;
+}
+
+.couple-combo {
+    background-color: #FF9F1C;
+}
+
+.plans__prices {
+    margin: 0;
+    padding: 20px 0 11px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plans__prices-item_title {
+    margin: 0 auto;
+    padding: 0;
+    font-weight: 500;
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+.plans__prices-wrapper {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.plans__dollar {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 23px;
+    margin-top: 15px;
+}
+
+.plans__price {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 90px;
+}
+
+.plans__price-each,
+.plans__length {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.plans__list-item_white {
+    margin: 0;
+    padding: 52px 0 32px 0;
+    background-color: #fff;
+    color: #222;
+    font-weight: 300;
+    font-size: 18px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 1;
+    position: relative;
+    bottom: 20px;
+}
+
+.plans__conditions {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.plans__conditions-item {
+    display: block;
+    text-transform: capitalize;
+    border-bottom: solid 1px #222;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 12px;
+}
+
+.plans__conditions-item:last-child {
+    border: none;
+    padding-bottom: 0;
+}

@@ -1,0 +1,53 @@
+.classes {
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
+    width: 100vw;
+    background-color: #222222;
+}
+
+.classes__wrapper {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.classes__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.classes__title {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+    font-family: "Anton", "Impact", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 50px;
+    color: #fff;
+}
+
+.classes__subtitle {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    font-size: 40px;
+    color: #fff;
+    font-family: "Roboto Condensed", sans-serif;
+    max-height: 50px;
+}
+
+.classes__subtitle_weeks {
+    margin: 0;
+    padding: 0;
+}
+
+.classes__subtitle_days {
+    margin: 0;
+    margin-bottom: 70px;
+    padding: 0;
+}

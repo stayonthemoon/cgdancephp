@@ -1,0 +1,118 @@
+.classes__list {
+    margin: 0 auto;
+    padding: 0 100px;
+    max-width: 60vw;
+    margin-top: 68px;
+    list-style: none;
+    color: #fff;
+    font-family: "Roboto Condensed", sans-serif;
+    border-left: solid;
+    border-right: solid;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.classes__list-title {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 50px;
+    font-family: "Anton", "Impact", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    color: #fff;
+}
+
+.classes__list-item {
+    display: grid;
+    grid-template-columns: 160px auto;
+    max-width: 600px;
+    gap: 91px;
+    border-bottom: solid;
+    padding-bottom: 50px;
+}
+
+.classes__list-item:last-child {
+    margin-bottom: 0;
+}
+
+.classes__list-item_date {
+    margin: 0;
+    padding: 0;
+    max-width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.classes__list-item_day {
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.classes__list-item_block {
+    display: block;
+    background-color: #E71D36;
+    width: 160px;
+    height: 35px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.classes__list-item_block-text {
+    font-size: 16px;
+    padding: 0;
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+.classes__list-item_class {
+    margin: 0;
+    padding: 0;
+    max-width: 343px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.classes__list-item_names,
+.classes__salsa,
+.classes__list-item_salsa,
+.classes__list-item_salsa-time,
+.classes__bachata,
+.classes__list-item_bachata,
+.classes__list-item_bachata-time {
+    margin: 0;
+    padding: 0;
+}
+
+.classes__list-item_names {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.classes__salsa,
+.classes__bachata {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.classes__list-item_salsa-time,
+.classes__list-item_bachata-time {
+    display: block;
+    border-left: solid;
+    padding-left: 10px;
+}
