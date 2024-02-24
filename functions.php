@@ -9,3 +9,10 @@ function cgdance_files() {
 }
 
 add_action('wp_enqueue_scripts', 'cgdance_files');
+
+function cgdance_features() {
+  add_theme_support('post-thumbnails');
+  add_theme_support('custom-units');
+}
+
+add_action('after_setup_theme', 'cgdance_features');

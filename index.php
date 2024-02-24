@@ -29,7 +29,7 @@ get_header();
                 $datesList->the_post();        ?>
         <li class="classes__list-item">
           <div class="classes__list-item_date">
-            <p class="classes__list-item_day"><?php the_title(); ?></>
+            <p class="classes__list-item_day"><?php get_the_title(); ?></>
             <div class="classes__list-item_block">
               <span class="classes__list-item_block-text">The Room YYC</span>
             </div>
@@ -47,8 +47,8 @@ get_header();
           </div>
         </li>
 <?php } ?>
-       
       </ul>
+      <?php wp_reset_query(); ?> 
       <div class="classes__location">
         <div class="classes__location-wrapper">
           <h4 class="classes__location-title">location:</h4>
@@ -191,10 +191,11 @@ get_header();
       <h2 class="aboutus__title">About us</h2>
       <ul class="aboutus__list">
         <li class="aboutus__list-item">
-          <img src="./images/aboutus__photo_cat.png" alt="photo" class="aboutus__list-item_photo">
+
+          <img src="<?php echo get_theme_file_uri('/images/aboutus__photo_cat.png') ?>" alt="photo" class="aboutus__list-item_photo">
           <div class="aboutus__group">
             <h6 class="aboutus__list-item_name">Catherine S. Cereceda</h6>
-            <a href="https://www.instagram.com/cat.cereceda/" class="aboutus__list-item_instagram"></a>
+            <a target="_blank" href="https://www.instagram.com/cat.cereceda/" class="aboutus__list-item_instagram"></a>
             <p class="aboutus__list-item_descr">Lorem ipsum dolor sit amet consectetur. Dui mauris id mus magna. Leo
               mattis faucibus viverra sed nec. Convallis viverra magna libero interdum. At molestie eget eget id vitae
               pulvinar. Lorem ipsum dolor sit amet consectetur. Dui mauris id mus magna. Leo mattis faucibus viverra sed
@@ -202,10 +203,10 @@ get_header();
           </div>
         </li>
         <li class="aboutus__list-item">
-          <img src="./images/aboutus__photo_gabe.png" alt="photo" class="aboutus__list-item_photo">
+          <img src="<?php echo get_theme_file_uri('/images/aboutus__photo_gabe.png') ?>" alt="photo" class="aboutus__list-item_photo">
           <div class="aboutus__group">
             <h6 class="aboutus__list-item_name">Gabriel Andres</h6>
-            <a href="https://www.instagram.com/gabriel_andres94/" class="aboutus__list-item_instagram"></a>
+            <a target="_blank" href="https://www.instagram.com/gabriel_andres94/" class="aboutus__list-item_instagram"></a>
             <p class="aboutus__list-item_descr">Lorem ipsum dolor sit amet consectetur. Dui mauris id mus magna. Leo
               mattis faucibus viverra sed nec. Convallis viverra magna libero interdum. At molestie eget eget id vitae
               pulvinar. Lorem ipsum dolor sit amet consectetur. Dui mauris id mus magna. Leo mattis faucibus viverra sed
