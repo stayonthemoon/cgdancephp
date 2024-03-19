@@ -14,14 +14,16 @@
           </div>
         </div>
         <div class="footer__wrapper-item">
-          <form class="footer__form">
-            <input class="footer__form_input" placeholder="Name" type="text">
-            <input class="footer__form_input" placeholder="Phone number" type="tel">
-            <input class="footer__form_input" placeholder="Email" type="email">
-            <textarea class="footer__form_input" placeholder="Have any questions? Dance your write away!"
-              name="text"></textarea>
-            <input class="footer__form_input-button" value="Submit" type="submit">
-          </form>
+        <?php 
+       $contactForm = new WP_Query(array(
+        'post_type' => 'contactform',
+       ));
+        while($contactForm->have_posts()) {
+          $contactForm->the_post(); ?>
+          <div>
+          <?php the_content(); ?>
+          </div>
+          <?php } ?>
         </div>
       </div>
       <div class="footer__bottom-wrapper">
@@ -31,7 +33,20 @@
       </div>
     </div>
   </footer>
-
   <?php wp_footer(); ?>
+  <script 
+  type='text/javascript' 
+  src="<?php echo get_theme_file_uri('/js/index.js') ?>">
+</script>
+
+<script 
+type='text/javascript'  
+src="<?php echo get_theme_file_uri('/node_modules/@glidejs/glide/dist/glide.min.js') ?>">
+</script>
+
+<script>
+  new Glide('.glide').mount()
+</script>
+
 </body>
 </html>

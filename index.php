@@ -1,13 +1,12 @@
 <?php 
 get_header(); 
 ?>
-
 <section class="classes" id="classes">
-    <div class="classes__wrapper">
-      <div class="classes__header">
-        <h2 class="classes__title">
+  <div class="classes__wrapper">
+    <div class="classes__header">
+      <h2 class="classes__title">
           Salsa & bachata classes 2024
-        </h2>
+      </h2>
         <h3 class="classes__subtitle classes__subtitle_weeks">
           Intermediate 4-weeks series
         </h3>
@@ -20,16 +19,18 @@ get_header();
       </h4>
       <ul class="classes__list">
         <?php 
-       $datesList = new WP_Query(array(
-        'post_type' => 'dates',
-        'orderby' => 'date',
-        'order' => 'ASC',
-       ));
-            while($datesList->have_posts()) {
-                $datesList->the_post();        ?>
+        $datesList = new WP_Query(array(
+          'post_type' => 'dates',
+          'orderby' => 'date',
+          'order' => 'ASC',
+        ));
+        while($datesList->have_posts()) {
+        $datesList->the_post(); ?>
         <li class="classes__list-item">
           <div class="classes__list-item_date">
-            <p class="classes__list-item_day"><?php get_the_title(); ?></>
+            <div class="classes__list-item_day">
+              <?php the_title(); ?>
+            </div>
             <div class="classes__list-item_block">
               <span class="classes__list-item_block-text">The Room YYC</span>
             </div>
@@ -37,16 +38,24 @@ get_header();
           <div class="classes__list-item_class">
             <p class="classes__list-item_names">With Catherine &amp; Gabriel</p>
             <div class="classes__salsa">
-              <p class="classes__list-item_salsa">salsa on1 int.</p>
-              <p class="classes__list-item_salsa-time">7-8PM</p>
+              <p class="classes__list-item_salsa">
+                <?php the_field('salsa_class'); ?>
+              </p>
+              <p class="classes__list-item_salsa-time">
+                <?php the_field('salsa_time'); ?>
+              </p>
             </div>
             <div class="classes__bachata">
-              <p class="classes__list-item_bachata">bachata int.</p>
-              <p class="classes__list-item_bachata-time">8-9PM</p>
+              <p class="classes__list-item_bachata">
+                <?php the_field('bachata_class'); ?>
+              </p>
+              <p class="classes__list-item_bachata-time">
+                <?php the_field('bachata_time'); ?>
+              </p>
             </div>
           </div>
         </li>
-<?php } ?>
+        <?php } ?>
       </ul>
       <?php wp_reset_query(); ?> 
       <div class="classes__location">
@@ -59,8 +68,9 @@ get_header();
         <p class="classes__location-address">5918 5 St sE bay 3, calgary, ab t2h 1l4</p>
       </div>
     </div>
-  </section>
-  <section class="plans" id="plans">
+</section>
+
+<section class="plans" id="plans">
     <div class="plans__wrapper">
       <h2 class="plans__title">
         4-weeks series pricing
@@ -185,65 +195,85 @@ get_header();
         </div>
       </div>
     </div>
-  </section>
-  <section class="aboutus" id="aboutus">
+</section>
+
+<section class="aboutus" id="aboutus">
     <div class="aboutus__wrapper">
       <h2 class="aboutus__title">About us</h2>
       <ul class="aboutus__list">
+      <?php 
+       $teacherList = new WP_Query(array(
+        'post_type' => 'teachers',
+        'orderby' => 'date',
+        'order' => 'ASC',
+       ));
+        while($teacherList->have_posts()) {
+          $teacherList->the_post(); ?>
         <li class="aboutus__list-item">
-
-          <img src="<?php echo get_theme_file_uri('/images/aboutus__photo_cat.png') ?>" alt="photo" class="aboutus__list-item_photo">
+          <div class="aboutus__list-item_photo">
+            <?php the_post_thumbnail(); ?>
+          </div>
           <div class="aboutus__group">
-            <h6 class="aboutus__list-item_name">Catherine S. Cereceda</h6>
-            <a target="_blank" href="https://www.instagram.com/cat.cereceda/" class="aboutus__list-item_instagram"></a>
-            <p class="aboutus__list-item_descr">Lorem ipsum dolor sit amet consectetur. Dui mauris id mus magna. Leo
-              mattis faucibus viverra sed nec. Convallis viverra magna libero interdum. At molestie eget eget id vitae
-              pulvinar. Lorem ipsum dolor sit amet consectetur. Dui mauris id mus magna. Leo mattis faucibus viverra sed
-              nec. Convallis viverra magna libero interdum. At molestie eget eget id vitae pulvinar.</p>
+            <h6 class="aboutus__list-item_name"><?php the_title(); ?></h6>
+            <a target="_blank" href="<?php the_field('insta_link'); ?>" class="aboutus__list-item_instagram"></a>
+            <div class="aboutus__list-item_descr">
+            <?php the_content(); ?>
           </div>
         </li>
-        <li class="aboutus__list-item">
-          <img src="<?php echo get_theme_file_uri('/images/aboutus__photo_gabe.png') ?>" alt="photo" class="aboutus__list-item_photo">
-          <div class="aboutus__group">
-            <h6 class="aboutus__list-item_name">Gabriel Andres</h6>
-            <a target="_blank" href="https://www.instagram.com/gabriel_andres94/" class="aboutus__list-item_instagram"></a>
-            <p class="aboutus__list-item_descr">Lorem ipsum dolor sit amet consectetur. Dui mauris id mus magna. Leo
-              mattis faucibus viverra sed nec. Convallis viverra magna libero interdum. At molestie eget eget id vitae
-              pulvinar. Lorem ipsum dolor sit amet consectetur. Dui mauris id mus magna. Leo mattis faucibus viverra sed
-              nec. Convallis viverra magna libero interdum. At molestie eget eget id vitae pulvinar.</p>
-          </div>
-        </li>
+        <?php } ?>
       </ul>
+      <?php wp_reset_query(); ?> 
     </div>
-  </section>
-  <section class="reviews" id="reviews">
-    <div class="reviews__wrapper">
-      <h2 class="reviews__title">Reviews</h2>
+</section>
+
+
+<section class="reviews" id="reviews">
+  <div class="reviews__wrapper">
+    <h2 class="reviews__title">Reviews</h2>
+    <div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <li class="glide__slide">
       <h5 class="reviews__name">Anastasia Felde</h5>
-      <div class="slider">
-        <div class="slider__content">
-          <button class="slider__content_arrow-left"></button>
-          <p class="slider__content_descr">Fantastic Bachata class! Friendly atmosphere, and a perfect balance of fun
-            and learning. Highly recommended!</p>
-          <button class="slider__content_arrow-right"></button>
-        </div>
-        <div class="slider__buttons">
-          <button class="slider_dot slider_dot-active"></button>
-          <button class="slider_dot"></button>
-          <button class="slider_dot"></button>
-        </div>
-      </div>
+      <span class="line"></span>
+      <p class="reviews__descr">Fantastic Bachata class! Friendly atmosphere, and a perfect balance of fun and learning. Highly recommended!</p>
+      </li>
+      <li class="glide__slide">
+      <h5 class="reviews__name">Anastasia</h5>
+      <span class="line"></span>
+      <p class="reviews__descr">s</p>
+      </li>
+      <li class="glide__slide">
+      <h5 class="reviews__name">Felde</h5>
+      <span class="line"></span>
+      <p class="reviews__descr">sasaa</p>
+      </li>
+    </ul>
+  </div>
+  <div class="glide__arrows glide__arrows_custom" data-glide-el="controls">
+    <button class="glide__arrow glide__arrow_prev" data-glide-dir="<"></button>
+    <button class="glide__arrow glide__arrow_next" data-glide-dir=">"></button>
+  </div>
+  <div class="glide__bullets" data-glide-el="controls[nav]">
+    <button class="glide__bullet" data-glide-dir="=0"></button>
+    <button class="glide__bullet" data-glide-dir="=1"></button>
+    <button class="glide__bullet" data-glide-dir="=2"></button>
+  </div>
+</div>
     </div>
-  </section>
-  <section class="studio" id="studio">
+</section>
+
+
+<section class="studio" id="studio">
     <div class="studio__wrapper">
       <h2 class="studio__title">The studio</h2>
       <h3 class="studio__name">the room yyc</h3>
       <p class="studio__address">5918 5 St sE bay 3, calgary, ab t2h 1l4</p>
       <div class="studio__map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1055.6915245796895!2d-114.0511438487737!3d51.00004214982939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5371712b1213333d%3A0x529a48d44eae962f!2sThe%20Room%20YYC%20-%20a%20creative%20space!5e0!3m2!1sru!2sca!4v1708795198618!5m2!1sru!2sca" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
-  </section>
+</section>
 
 <?php get_footer();
 ?>
